@@ -1,4 +1,5 @@
-﻿using ToDoApi.Data.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using ToDoApi.Data.Models;
 using ToDoApi.DTOs;
 using ToDoApi.Interfaces;
 
@@ -9,7 +10,7 @@ namespace ToDoApi.Services
         private readonly IToDoItemRepository _toDoItemRepository;
 
 
-        public ToDoItemService(IToDoItemRepository toDoItemRepository)
+        public ToDoItemService([FromServices] IToDoItemRepository toDoItemRepository)
         {
             _toDoItemRepository = toDoItemRepository;
         }

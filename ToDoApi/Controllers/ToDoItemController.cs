@@ -16,12 +16,10 @@ namespace ToDoApi.Controllers
     public class ToDoItemController : ControllerBase
     {
         private readonly IToDoItemService _toDoItemService;
-        private readonly IUserRepository _userRepository;
 
-        public ToDoItemController(IToDoItemService toDoItemService, IUserRepository userRepository)
+        public ToDoItemController([FromServices] IToDoItemService toDoItemService)
         {
             _toDoItemService = toDoItemService;
-            _userRepository = userRepository;
         }
 
         [HttpPost]
